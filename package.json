@@ -1,0 +1,54 @@
+{
+  "name": "@rafaelhdsv/keep-alive",
+  "version": "1.0.0",
+  "description": "Self-ping periódico para Web Services Node que hibernam por inatividade (Render, Railway, Fly.io e similares)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "keep-alive": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "node --import tsx --test tests/**/*.test.ts",
+    "prepublishOnly": "yarn build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "keep-alive",
+    "render",
+    "railway",
+    "flyio",
+    "hibernation",
+    "self-ping",
+    "health-check"
+  ],
+  "author": "Rafael Vieira",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RafaelHDSV/keep-alive.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "commander": "^13.1.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

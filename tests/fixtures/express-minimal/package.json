@@ -1,0 +1,11 @@
+{
+  "name": "express-minimal-fixture",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.ts"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

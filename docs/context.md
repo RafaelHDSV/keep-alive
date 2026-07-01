@@ -1,14 +1,14 @@
-# keep-alive — contexto do projeto
+# @rafaelhdsv/keep-alive — contexto do projeto
 
-> Contexto primario para assistentes de IA (regra `ai-context.mdc`). Atualize este arquivo ao evoluir o produto.
+> Contexto primário para assistentes de IA (regra `ai-context.mdc`).
 
-**Pacote:** `keep-alive` | **Ano:** 2026
+**Pacote:** `@rafaelhdsv/keep-alive` | **Ano:** 2026
 
 ---
 
 ## Objetivo
 
-Descreva em 2 a 4 frases o que este projeto faz, para quem e qual problema resolve.
+Biblioteca npm com `startKeepAlive()` para self-ping periódico em Web Services Node que hibernam por inatividade (Render, Railway, Fly.io, etc.), mais CLI `keep-alive init` para adoção rápida em projetos Express. Produto genérico — Render é exemplo comum, não único alvo.
 
 ---
 
@@ -16,27 +16,28 @@ Descreva em 2 a 4 frases o que este projeto faz, para quem e qual problema resol
 
 | Camada | Tecnologia / nota |
 |--------|-------------------|
-| Front | (ex.: React, Vite, TypeScript, SASS) |
-| Back | (ex.: Node, Express) ou N/A |
-| Banco | (ex.: MongoDB, PostgreSQL) ou N/A |
-| Tooling | (ex.: Yarn, Node 22) |
+| Runtime | Node ≥ 18 (`fetch` nativo); repo usa Node 22 (`.nvmrc`) |
+| Linguagem | TypeScript strict, ESM |
+| Build | tsup → `dist/index.js`, `dist/cli/index.js`, `.d.ts` |
+| CLI | commander (devDependency) |
+| Testes | `node:test` + `node:assert` + tsx |
+| Package manager | Yarn Classic v1 — lockfile commitado |
+| Publicação | npm público, escopo `@rafaelhdsv` |
+
+**Zero dependências de runtime** no `package.json`.
 
 ---
 
-## Portas e URLs (desenvolvimento)
+## Decisões fixas
 
-| Servico | Porta / URL |
-|---------|-------------|
-| Front | (ex.: http://localhost:3333) |
-| API | (ex.: http://localhost:3693) ou N/A |
-
----
-
-## Decisoes fixas
-
-1. (ex.: nao sobrescrever arquivos existentes no scaffold)
-2. (ex.: sem Docker na v1)
-3. 
+1. API pública: `startKeepAlive()` — não `startRenderKeepAlive`
+2. Bin CLI: `keep-alive` → `npx @rafaelhdsv/keep-alive init`
+3. URL: `KEEP_ALIVE_URL` → `RENDER_EXTERNAL_URL` → `RENDER_APP_URL` (strip `/` final)
+4. Path default `/api/health`; intervalo default 10 min; timeout fetch 90s
+5. No-op silencioso sem URL (dev local)
+6. CLI v1: Express only; Fastify/Hono via lib manual
+7. Patch por heurística regex (sem ts-morph na v1)
+8. Migração Cronograma e demais consumidores: issue #2 (fora deste repo)
 
 ---
 
@@ -44,17 +45,24 @@ Descreva em 2 a 4 frases o que este projeto faz, para quem e qual problema resol
 
 | Tipo | URL |
 |------|-----|
-| Repositorio | |
-| Epic / board | |
-| Documentacao | `docs/especificacao.md` (se existir) |
+| Repositório | https://github.com/RafaelHDSV/keep-alive |
+| Epic | https://github.com/RafaelHDSV/keep-alive/issues/1 |
+| Migração consumidores | https://github.com/RafaelHDSV/keep-alive/issues/2 |
+| Referência original | https://github.com/RafaelHDSV/Cronograma-de-Gravacoes — `server/keepAlive.ts` |
+| Especificação | `docs/especificacao.md` |
+| Config npm | `docs/configuracao-npm.md` |
+| Config provedor | `docs/configuracao-provedor.md` |
 
 ---
 
-## Fora de escopo
+## Fora de escopo (v1)
 
-- 
-- 
+- Publicação automática no npm (documentada, execução manual)
+- Plugin Vieira CLI
+- CLI para Fastify/Hono
+- Dogfooding Cronograma (issue #2)
+- GitHub Actions de keep-alive nos consumidores
 
 ---
 
-*Gerado com Vieira CLI (`vieira common` ou scaffold `front` / `full` / `extension`).*
+*Atualizado na implementação das fases 1–2 (2026-07-01).*

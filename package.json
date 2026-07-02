@@ -1,6 +1,6 @@
 {
   "name": "@rafaelhdsv/keep-alive",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Self-ping periódico para Web Services Node que hibernam por inatividade (Render, Railway, Fly.io e similares)",
   "type": "module",
   "main": "./dist/index.js",
@@ -37,9 +37,13 @@
   ],
   "author": "Rafael Vieira",
   "license": "MIT",
+  "homepage": "https://github.com/RafaelHDSV/keep-alive#readme",
+  "bugs": {
+    "url": "https://github.com/RafaelHDSV/keep-alive/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RafaelHDSV/keep-alive.git"
+    "url": "git+https://github.com/RafaelHDSV/keep-alive.git"
   },
   "publishConfig": {
     "access": "public"

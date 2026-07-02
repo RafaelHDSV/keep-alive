@@ -18,8 +18,16 @@ export interface InitResult {
   envExampleChanged: boolean
 }
 
+function moduleDirname(): string {
+  // CJS bundle (CLI publicado): tsup injeta __dirname em dist/cli.cjs
+  if (typeof __dirname !== 'undefined') {
+    return __dirname
+  }
+  return dirname(fileURLToPath(import.meta.url))
+}
+
 function getPackageRoot(): string {
-  let dir = dirname(fileURLToPath(import.meta.url))
+  let dir = moduleDirname()
   while (dir !== dirname(dir)) {
     if (existsSync(join(dir, 'templates', 'health-route.express.ts.txt'))) {
       return dir

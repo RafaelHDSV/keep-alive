@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import { Command } from 'commander'
 import { runInit } from './init.js'
 
@@ -7,7 +6,7 @@ const program = new Command()
 program
   .name('keep-alive')
   .description('Self-ping para Web Services Node que hibernam por inatividade')
-  .version('1.0.0')
+  .version('1.0.1')
 
 program
   .command('init')

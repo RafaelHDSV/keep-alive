@@ -12,10 +12,12 @@ export default defineConfig([
   },
   {
     entry: { cli: 'src/cli/index.ts' },
-    format: ['esm'],
+    format: ['cjs'],
+    platform: 'node',
     sourcemap: true,
     target: 'node18',
     outDir: 'dist',
+    outExtension: () => ({ js: '.cjs' }),
     clean: false,
     banner: {
       js: '#!/usr/bin/env node',

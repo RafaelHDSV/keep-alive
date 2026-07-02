@@ -1,6 +1,6 @@
 {
   "name": "@rafaelhdsv/keep-alive",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Self-ping periódico para Web Services Node que hibernam por inatividade (Render, Railway, Fly.io e similares)",
   "type": "module",
   "main": "./dist/index.js",
@@ -12,7 +12,7 @@
     }
   },
   "bin": {
-    "keep-alive": "./dist/cli.js"
+    "keep-alive": "./dist/cli.cjs"
   },
   "files": [
     "dist",

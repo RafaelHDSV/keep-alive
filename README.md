@@ -1,4 +1,4 @@
-[![NPM](https://nodei.co/npm/@rafaelhdsv/keep-alive.svg?data=d,s)](https://nodei.co/npm/@rafaelhdsv/keep-alive/)
+﻿[![NPM](https://nodei.co/npm/@rafaelhdsv/keep-alive.svg?data=d,s)](https://nodei.co/npm/@rafaelhdsv/keep-alive/)
 
 # @rafaelhdsv/keep-alive
 
@@ -408,3 +408,7 @@ MIT © 2026 Rafael Vieira — veja [LICENSE](./LICENSE).
 ## Apoie
 
 <a href="https://www.buymeacoffee.com/vieira" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" height="32" width="117" style="height: 32px !important; width: 117px !important;" ></a>
+
+---
+
+Comunidade: [CHANGELOG](CHANGELOG.md) · [CONTRIBUTING](CONTRIBUTING.md) · [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md)

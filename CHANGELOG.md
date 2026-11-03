@@ -4,6 +4,12 @@ Todas as mudanças notáveis deste projeto serão documentadas neste arquivo.
 
 O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o versionamento [SemVer](https://semver.org/lang/pt-BR/).
 
+## [Unreleased]
+
+### Adicionado
+
+- Alinhamento ao padrão de living docs (board#7): links de comunidade no README.
+
 ## [1.0.1] - 2026-07-01
 
 ### Corrigido
